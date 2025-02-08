@@ -60,11 +60,12 @@ int main()
 	image.line(0, 1100,	200, 1100, 0.6745, 0.5059, 0.4118);
 	image.line(0, 820, 160, 820, 0.6745, 0.5059, 0.4118);
 
-	// Leaves
-	image.filledtriangle_blend(0, 1550, 50, 1200, 0, 1200, 0.9, 0.459, 0.741, 0.545);
+	// Left Plant Leaves
+	image.filledtriangle_blend(0, 1650, 60, 1100, 0, 1100, 0.9, 0.459, 0.741, 0.545);
+	image.filledtriangle_blend(-200, 1100, 170, 1500, 60, 1100, 0.9, 0.459, 0.741, 0.545);
+	image.filledtriangle_blend(-50, 1100, 220, 1300, 130, 1100, 0.9, 0.459, 0.741, 0.545);
 
-
-	// Right Plant
+	// Right Plant Pot
 	image.line(1300, 1100, 1350, 820, 0.6745, 0.5059, 0.4118);
 	image.line(1300, 1100, 1500, 1100, 0.6745, 0.5059, 0.4118);
 	image.line(1300, 820, 1500, 820, 0.6745, 0.5059, 0.4118);
