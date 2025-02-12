@@ -59,6 +59,7 @@ int main()
 	image.line(160, 820, 200, 1100, 0.6745, 0.5059, 0.4118);
 	image.line(0, 1100,	200, 1100, 0.6745, 0.5059, 0.4118);
 	image.line(0, 820, 160, 820, 0.6745, 0.5059, 0.4118);
+	image.flood_fill(50, 900, 0.675, 0.506, 0.412);
 
 	// Left Plant Leaves
 	image.filledtriangle_blend(0, 1650, 60, 1100, 0, 1100, 0.9, 0.459, 0.741, 0.545);
@@ -69,6 +70,7 @@ int main()
 	image.line(1300, 1100, 1350, 820, 0.6745, 0.5059, 0.4118);
 	image.line(1300, 1100, 1500, 1100, 0.6745, 0.5059, 0.4118);
 	image.line(1300, 820, 1500, 820, 0.6745, 0.5059, 0.4118);
+	image.flood_fill(1400, 900, 0.675, 0.506, 0.412);
 
 	// Book Shelf
 	image.filledsquare(0, 0, width, 820, 0.7765, 0.6196, 0.5137); // Top
@@ -127,7 +129,7 @@ int main()
 
 	image.filledsquare(1250, shelf_top, 1390, 550, 0.8667, 0.6275, 0.4275);
 	image.polygon(yellow_book_polygon_points, num_book_polygon_points, 0.922, 0.780, 0.584);
-	image.flood_fill(1350, 520, 0.922, 0.780, 0.584);
+	image.boundary_fill(1350, 520, 0.922, 0.780, 0.584, 0.922, 0.780, 0.584);
 
 	// Pink Book
 	image.filledsquare(1390, shelf_top, 1500, 600, 0.8235, 0.5098, 0.6980);
