@@ -77,7 +77,13 @@ int main()
 	image.line(650, 550, 675, 410, 0.6745, 0.5059, 0.4118);
 	image.line(650, 550, 750, 550, 0.6745, 0.5059, 0.4118);
 	image.line(650, 410, 750, 410, 0.6745, 0.5059, 0.4118);
-	image.flood_fill(700, 450, 0.675, 0.506, 0.412);
+	image.flood_fill(700, 450, 0.675, 0.506, 0.412);     
+
+	// Right Plant Leaves
+	image.filledtriangle_blend(680, 550, 630, 680, 750, 550, 0.9, 0.459, 0.741, 0.545);
+	image.filledtriangle_blend(690, 550, 675, 760, 800, 550, 0.9, 0.459, 0.741, 0.545);
+	image.filledtriangle_blend(720, 550, 750, 800, 780, 550, 0.9, 0.459, 0.741, 0.545);
+
 
 	// Book Shelf
 	image.filledsquare(0, 0, width, 410, 0.7765, 0.6196, 0.5137); // Top
