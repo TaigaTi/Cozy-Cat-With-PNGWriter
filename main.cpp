@@ -5,7 +5,12 @@
 #include "pngwriter.h" 
 #include <string>
 
-/* Functions Used:
+/* 
+	Name: Tarika Birch
+	ID: 400013038
+	Theme: Cozy Kitty
+	
+	Functions Used:
 	1.  square
 	2.  filledsquare
 	3.  filledsquare_blend
@@ -41,6 +46,7 @@
 	33. getgamma
 	34. getbitdepth
 	35. getcolortype
+	36. settext
 */
 
 int main()
@@ -49,6 +55,13 @@ int main()
 	int height = 1000;
 
 	pngwriter image(width, height, 1.0, "cat.png");
+
+	// Image Details
+	char title[] = "Cozy Kitty";
+	char author[] = "Tarika Birch";
+	char description[] = "Cozy kitty on a cozy night!";
+	char software[] = "PNGWriter";
+	image.settext(title, author, description, software);
 
 	// Wall & Window Frame
 	image.filledsquare(0, 0, width, height, 0.5216, 0.3843, 0.3059); // Wall
@@ -189,9 +202,9 @@ int main()
 	image.flood_fill(675, 260, 0.922, 0.780, 0.584);
 	image.arrow(660, 230, 660, 140, 20, 80, 0.922, 0.780, 0.584);
 
-
 	// Pink Book
 	image.filledsquare(695, shelf_top, width, 300, 0.8235, 0.5098, 0.6980);
+
 
 	// Bottom Shelf (Right to Left)
 	// Orange Book
@@ -242,6 +255,9 @@ int main()
 
 
 	// Cat
+	// Tail
+	image.filledcircle(350, 600, 20, 1.0, 1.0, 1.0);
+	 
 	// Body
 	image.filledcircle(375, 500, 150, 0.945, 0.690, 0.471);
 	image.circle(375, 500, 150, 0.251, 0.145, 0.110);
@@ -307,14 +323,15 @@ int main()
 
 	image.setgamma(0.55);
 
-	// Text
 	// Assignment Info
 	int font_size = 12;
 	int line_height = 22;
 	int first_line = 960;
+
 	double font_red = 0.9451;
 	double font_green = 0.8196;
 	double font_blue = 0.6706;
+
 	char font_type_path[] = "C:\\Users\\tarik\\OneDrive\\Documents\\UWI\\Assignment-1\\Montserrat-SemiBold.ttf";
 	char name[] = "Tarika Birch";
 	char id[] = "400013038";
@@ -386,7 +403,6 @@ int main()
 
 	image.plot_text(font_type_path, font_size, infoXStart, first_line - (line_height * 3), 0, imageColorTypeLabel, font_red, font_green, font_blue);
 	image.plot_text(font_type_path, font_size, infoXStart + 105, first_line - (line_height * 3), 0, imageColorTypeCStr, font_red, font_green, font_blue);
-
 
 	image.close();
 
