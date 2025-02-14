@@ -268,10 +268,25 @@ int main()
 	image.flood_fill(358, 720, catRed, catGreen, catBlue);
 	image.flood_fill(355, 670, catRed, catGreen, catBlue);
 	image.flood_fill(392, 670, catRed, catGreen, catBlue);
-	 
+
+	image.bezier(376, 780, 376, 770, 410, 755, 400, 750, 0.816, 0.478, 0.247);
+	image.bezier(366, 760, 366, 750, 400, 735, 390, 730, 0.816, 0.478, 0.247);
+	image.flood_fill(370, 770, 0.816, 0.478, 0.247);
+
+	image.bezier(359, 735, 359, 720, 395, 710, 390, 710, 0.816, 0.478, 0.247);
+	image.bezier(355, 715, 355, 700, 394, 689, 389, 690, 0.816, 0.478, 0.247);
+	image.flood_fill(358, 720, 0.816, 0.478, 0.247);
+
+	// Shadow
+	image.bezier_blend(275, 400, 100, 310, 475, 400, 650, 310, 0.4, 0.6745, 0.5059, 0.4118);
+
 	// Body
 	image.filledcircle(375, 500, 150, catRed, catGreen, catBlue);
 	image.circle(375, 500, 150, 0.251, 0.145, 0.110);
+
+	// Shadow Fill
+	image.flood_fill_blend(330, 350,0.4, 0.6745, 0.5059, 0.4118);
+
 
 	// Left Ear
 	image.filledtriangle(285, 520, 250, 590, 360, 550, catRed, catGreen, catBlue);
@@ -289,6 +304,19 @@ int main()
 	image.filledcircle(375, 480, 100, catRed, catGreen, catBlue);
 	image.circle(375, 480, 100, 0.251, 0.145, 0.110);
 
+	// Stripes
+	image.line(375 + 15, 578, 375, 520, 0.816, 0.478, 0.247);
+	image.line(375 - 15, 578, 375, 520, 0.816, 0.478, 0.247);
+	image.flood_fill(375, 550, 0.816, 0.478, 0.247);
+
+	image.line(375 + 40, 570, 390, 530, 0.816, 0.478, 0.247);
+	image.line(375 + 25, 576, 390, 530, 0.816, 0.478, 0.247);
+	image.flood_fill(400, 550, 0.816, 0.478, 0.247);
+
+	image.line(375 - 40, 570, 360, 530, 0.816, 0.478, 0.247);
+	image.line(375 - 25, 576, 360, 530, 0.816, 0.478, 0.247);
+	image.flood_fill(350, 550, 0.816, 0.478, 0.247);
+
 	// Left Paw
 	image.filledcircle(300, 380, 35, catRed, catGreen, catBlue);
 	image.circle(300, 380, 35, 0.251, 0.145, 0.110);
@@ -296,6 +324,9 @@ int main()
 	// Right Paw
 	image.filledcircle(450, 380, 35, catRed, catGreen, catBlue);
 	image.circle(450, 380, 35, 0.251, 0.145, 0.110);
+
+	// Tummy
+	image.flood_fill(375, 370, 1.0, 1.0, 1.0);
 
 	// Nose
 	image.filledtriangle(360, 465, 390, 468, 377, 450, 0.251, 0.145, 0.110); 
@@ -308,6 +339,8 @@ int main()
 	image.filledcircle(334, 489, 14, 0.251, 0.145, 0.110); // Pupil
 	image.filledcircle(335, 495, 3, 1.0, 1.0, 1.0); // Big Sparkle
 	image.filledcircle(328, 489, 2, 1.0, 1.0, 1.0); // Small Sparkle
+	image.filledtriangle(310, 495, 300, 505, 315, 505, 0.251, 0.145, 0.110); // Large Eyelash
+	image.filledtriangle(310, 498, 302, 494, 310, 490, 0.251, 0.145, 0.110); // Small Eyelash
 
 	// Right Eye
 	image.filledcircle(415, 500, 22, 0.251, 0.145, 0.110); // Eyeliner
@@ -317,6 +350,8 @@ int main()
 	image.filledcircle(410, 498, 14, 0.251, 0.145, 0.110); // Pupil
 	image.filledcircle(410, 504, 3, 1.0, 1.0, 1.0); // Big Sparkle
 	image.filledcircle(404, 497, 2, 1.0, 1.0, 1.0); // Small Sparkle
+	image.filledtriangle(435, 510, 440, 522, 425, 519, 0.251, 0.145, 0.110); // Large Eyelash
+	image.filledtriangle(435, 505, 442, 512, 435, 512, 0.251, 0.145, 0.110); // Small Eyelash
 
 	// Blush
 	image.filledcircle(330, 450, 9, 0.867, 0.549, 0.475); // Left
