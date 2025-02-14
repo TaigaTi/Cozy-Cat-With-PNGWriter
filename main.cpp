@@ -255,35 +255,46 @@ int main()
 
 
 	// Cat
+	double catRed = 0.945;
+	double catGreen = 0.690;
+	double catBlue = 0.471;
+	
 	// Tail
-	image.filledcircle(350, 600, 20, 1.0, 1.0, 1.0);
+	image.bezier(350, 650, 350, 850, 450, 780, 450, 820, 0.251, 0.145, 0.110);
+	image.bezier(450, 780, 420, 720, 400, 500, 380, 850, 0.251, 0.145, 0.110);
+	image.line(350, 650, 400, 500, 0.251, 0.145, 0.110);
+	image.flood_fill(380, 780, catRed, catGreen, catBlue);
+	image.flood_fill(400, 780, catRed, catGreen, catBlue);
+	image.flood_fill(358, 720, catRed, catGreen, catBlue);
+	image.flood_fill(355, 670, catRed, catGreen, catBlue);
+	image.flood_fill(392, 670, catRed, catGreen, catBlue);
 	 
 	// Body
-	image.filledcircle(375, 500, 150, 0.945, 0.690, 0.471);
+	image.filledcircle(375, 500, 150, catRed, catGreen, catBlue);
 	image.circle(375, 500, 150, 0.251, 0.145, 0.110);
 
 	// Left Ear
-	image.filledtriangle(285, 520, 250, 590, 360, 550, 0.945, 0.690, 0.471);
+	image.filledtriangle(285, 520, 250, 590, 360, 550, catRed, catGreen, catBlue);
 	image.triangle(285, 520, 250, 590, 360, 550, 0.251, 0.145, 0.110);
 	image.filledtriangle(300, 520, 270, 570, 350, 540, 0.867, 0.549, 0.475);
 	image.triangle(300, 520, 270, 570, 350, 540, 0.251, 0.145, 0.110);
 
 	// Right Ear
-	image.filledtriangle(365, 550, 470, 610, 460, 530, 0.945, 0.690, 0.471);
+	image.filledtriangle(365, 550, 470, 610, 460, 530, catRed, catGreen, catBlue);
 	image.triangle(365, 550, 470, 610, 460, 530, 0.251, 0.145, 0.110);
 	image.filledtriangle(390, 550, 455, 590, 445, 515, 0.867, 0.549, 0.475);
 	image.triangle(390, 550, 455, 590, 445, 515, 0.251, 0.145, 0.110);
 
 	// Head
-	image.filledcircle(375, 480, 100, 0.945, 0.690, 0.471);
+	image.filledcircle(375, 480, 100, catRed, catGreen, catBlue);
 	image.circle(375, 480, 100, 0.251, 0.145, 0.110);
 
 	// Left Paw
-	image.filledcircle(300, 380, 35, 0.945, 0.690, 0.471);
+	image.filledcircle(300, 380, 35, catRed, catGreen, catBlue);
 	image.circle(300, 380, 35, 0.251, 0.145, 0.110);
 
 	// Right Paw
-	image.filledcircle(450, 380, 35, 0.945, 0.690, 0.471);
+	image.filledcircle(450, 380, 35, catRed, catGreen, catBlue);
 	image.circle(450, 380, 35, 0.251, 0.145, 0.110);
 
 	// Nose
